@@ -17,11 +17,19 @@ struct Photo: Codable {
     var id: String
     var description: String?
     var urls: URLs
+    var user: User
 }
 
 struct URLs: Codable {
     var small: String
     var regular: String
+    var full: String
+}
+
+struct User:Codable {
+    var id: String
+    var username: String
+    var name: String
 }
 
 

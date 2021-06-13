@@ -32,9 +32,17 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="414" height="270"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="authorName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wNh-oE-EoX">
+                                                    <rect key="frame" x="20" y="238" width="195" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="authorName" destination="wNh-oE-EoX" id="U6L-up-rg3"/>
                                             <outlet property="photo" destination="4Al-pK-twG" id="XG5-82-KGf"/>
                                         </connections>
                                     </tableViewCell>
@@ -53,6 +61,47 @@
             </objects>
             <point key="canvasLocation" x="839.13043478260875" y="-504.24107142857139"/>
         </scene>
+        <!--Image Detail View Controller-->
+        <scene sceneID="ev1-vV-X2S">
+            <objects>
+                <viewController storyboardIdentifier="ImageDetailView" id="tnB-dA-yZy" customClass="ImageDetailViewController" customModule="Splashpaper" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="RVv-MD-gkc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tKe-gY-ZRx">
+                                <rect key="frame" x="0.0" y="88" width="414" height="734"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="kmb-Kd-vBv"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="03n-dF-jcp"/>
+                    <connections>
+                        <outlet property="photo" destination="tKe-gY-ZRx" id="oPl-EI-4vo"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SXD-hR-YIv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2705.7971014492755" y="-497.54464285714283"/>
+        </scene>
+        <!--Search photos-->
+        <scene sceneID="pBO-fn-raL">
+            <objects>
+                <viewController id="eWG-vr-rHO" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="aRf-5m-QfQ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="jXd-aW-h9S"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Search photos" image="magnifyingglass" catalog="system" id="cWK-CN-gbL"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DZt-dF-38J" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="839" y="230"/>
+        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="xmR-4b-yyx">
             <objects>
@@ -64,14 +113,34 @@
                     </tabBar>
                     <connections>
                         <segue destination="6P8-Vc-0Hl" kind="relationship" relationship="viewControllers" id="udx-LL-Bk3"/>
+                        <segue destination="eWG-vr-rHO" kind="relationship" relationship="viewControllers" id="r4Y-Ic-CUA"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uZF-lr-gOW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-71.014492753623188" y="-504.24107142857139"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="OAE-gW-le1">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="LKD-oa-fiL" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="4NN-zT-4wQ">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="tnB-dA-yZy" kind="relationship" relationship="rootViewController" id="4iD-vV-Ho9"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HUy-Y1-nws" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1795.6521739130437" y="-497.54464285714283"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="magnifyingglass" catalog="system" width="128" height="115"/>
         <image name="photo.on.rectangle.angled" catalog="system" width="128" height="101"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

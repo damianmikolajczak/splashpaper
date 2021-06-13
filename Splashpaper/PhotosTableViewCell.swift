@@ -10,4 +10,5 @@ import UIKit
 
 class PhotosTableViewCell: UITableViewCell {
     @IBOutlet weak var photo: UIImageView!
+    @IBOutlet weak var authorName: UILabel!
 }

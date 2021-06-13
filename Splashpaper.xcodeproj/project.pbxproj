@@ -18,6 +18,7 @@
 		2DF1343F267686EE002B8811 /* SplashpaperUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DF1343E267686EE002B8811 /* SplashpaperUITests.swift */; };
 		2DF1344D26769EF8002B8811 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DF1344C26769EF8002B8811 /* Photo.swift */; };
 		2DF1344F2676B036002B8811 /* PhotosTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DF1344E2676B036002B8811 /* PhotosTableViewCell.swift */; };
+		2DF134512676C4F8002B8811 /* ImageDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DF134502676C4F8002B8811 /* ImageDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		2DF13440267686EE002B8811 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2DF1344C26769EF8002B8811 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		2DF1344E2676B036002B8811 /* PhotosTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosTableViewCell.swift; sourceTree = "<group>"; };
+		2DF134502676C4F8002B8811 /* ImageDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +113,7 @@
 				2DF1344C26769EF8002B8811 /* Photo.swift */,
 				2DF1344E2676B036002B8811 /* PhotosTableViewCell.swift */,
 				2DF1341F267686ED002B8811 /* Main.storyboard */,
+				2DF134502676C4F8002B8811 /* ImageDetailViewController.swift */,
 				2DF13425267686EE002B8811 /* Assets.xcassets */,
 				2DF13427267686EE002B8811 /* LaunchScreen.storyboard */,
 				2DF1342A267686EE002B8811 /* Info.plist */,
@@ -269,6 +272,7 @@
 			files = (
 				2DF1344F2676B036002B8811 /* PhotosTableViewCell.swift in Sources */,
 				2DF1341E267686ED002B8811 /* ViewController.swift in Sources */,
+				2DF134512676C4F8002B8811 /* ImageDetailViewController.swift in Sources */,
 				2DF1341A267686ED002B8811 /* AppDelegate.swift in Sources */,
 				2DF1341C267686ED002B8811 /* SceneDelegate.swift in Sources */,
 				2DF13424267686ED002B8811 /* Splashpaper.xcdatamodeld in Sources */,

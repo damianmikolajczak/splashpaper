@@ -25,7 +25,7 @@ class ViewController: UIViewController {
     }
 
     func searchPhotos() {
-        let url = URL(string: "https://api.unsplash.com/search/photos?query=office")
+        let url = URL(string: "https://api.unsplash.com/search/photos?&query=mountain")
         var request = URLRequest(url: url!)
 
         request.httpMethod = "GET"
@@ -70,6 +70,7 @@ extension ViewController: UITableViewDataSource {
                 guard let data = data else { return }
                 DispatchQueue.main.async {
                     cell.photo.image = UIImage(data: data)
+                    cell.authorName.text = self.serachResult!.results[indexPath.row].user.name
                 }
             })
             
@@ -81,6 +82,25 @@ extension ViewController: UITableViewDataSource {
 }
 
 extension ViewController: UITableViewDelegate {
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let vc = storyboard?.instantiateViewController(identifier: "ImageDetailView") as! ImageDetailViewController
+        
+        if let photoUrlString = serachResult?.results[indexPath.row].urls.full {
+            let photoURL = URL(string: photoUrlString)
+            var request = URLRequest(url: photoURL!)
+            request.httpMethod = "GET"
+            
+            let task = URLSession.shared.dataTask(with: request, completionHandler: {data, response, error in
+                guard let data = data else { return }
+                DispatchQueue.main.async {
+                    vc.image = UIImage(data: data)
+                    vc.modalPresentationStyle = .popover
+                    self.present(vc, animated: true, completion: nil)
+                }
+            })
+            
+            task.resume()
+        }
+    }
 }
 
