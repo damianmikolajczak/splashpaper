@@ -16,6 +16,7 @@
 		2DF13429267686EE002B8811 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2DF13427267686EE002B8811 /* LaunchScreen.storyboard */; };
 		2DF13434267686EE002B8811 /* SplashpaperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DF13433267686EE002B8811 /* SplashpaperTests.swift */; };
 		2DF1343F267686EE002B8811 /* SplashpaperUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DF1343E267686EE002B8811 /* SplashpaperUITests.swift */; };
+		2DF1344D26769EF8002B8811 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DF1344C26769EF8002B8811 /* Photo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		2DF1343A267686EE002B8811 /* SplashpaperUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SplashpaperUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2DF1343E267686EE002B8811 /* SplashpaperUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashpaperUITests.swift; sourceTree = "<group>"; };
 		2DF13440267686EE002B8811 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2DF1344C26769EF8002B8811 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +106,7 @@
 				2DF13419267686ED002B8811 /* AppDelegate.swift */,
 				2DF1341B267686ED002B8811 /* SceneDelegate.swift */,
 				2DF1341D267686ED002B8811 /* ViewController.swift */,
+				2DF1344C26769EF8002B8811 /* Photo.swift */,
 				2DF1341F267686ED002B8811 /* Main.storyboard */,
 				2DF13425267686EE002B8811 /* Assets.xcassets */,
 				2DF13427267686EE002B8811 /* LaunchScreen.storyboard */,
@@ -265,6 +268,7 @@
 				2DF1341A267686ED002B8811 /* AppDelegate.swift in Sources */,
 				2DF1341C267686ED002B8811 /* SceneDelegate.swift in Sources */,
 				2DF13424267686ED002B8811 /* Splashpaper.xcdatamodeld in Sources */,
+				2DF1344D26769EF8002B8811 /* Photo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
