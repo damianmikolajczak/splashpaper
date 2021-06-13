@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-struct Results: Codable {
+struct Result: Codable {
     var total: Int
     var results: [Photo]
 }
