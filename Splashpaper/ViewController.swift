@@ -9,12 +9,18 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var photosTable: UITableView!
+    
+    
     let token = "Of course i hide the access key :)"
     var photos = Array<Results>()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         searchPhotos()
+        
+        photosTable.delegate = self
+        photosTable.dataSource = self
     }
 
     func searchPhotos() {
@@ -37,6 +43,24 @@ class ViewController: UIViewController {
         })
         task.resume()
     }
+    
+}
+
+extension ViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return photos.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "PhotoCell", for: indexPath)
+        
+        return cell
+    }
+    
+    
+}
+
+extension ViewController: UITableViewDelegate {
     
 }
 
