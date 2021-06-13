@@ -21,6 +21,7 @@ struct Photo: Codable {
 
 struct URLs: Codable {
     var small: String
+    var regular: String
 }
 
 

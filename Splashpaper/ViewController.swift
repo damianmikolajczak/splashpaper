@@ -21,6 +21,7 @@ class ViewController: UIViewController {
         
         photosTable.delegate = self
         photosTable.dataSource = self
+        photosTable.rowHeight = 270
     }
 
     func searchPhotos() {
@@ -36,11 +37,15 @@ class ViewController: UIViewController {
                 let result = try JSONDecoder().decode(Result.self, from: data)
                 self.serachResult = result
                 print(result)
+                DispatchQueue.main.async {
+                    self.photosTable.reloadData()
+                }
             } catch {
                 print(error)
             }
         })
         task.resume()
+        
     }
     
 }
@@ -48,20 +53,31 @@ class ViewController: UIViewController {
 extension ViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         guard let numberOfElements = serachResult?.results.count else {
-            return 0
+            return 2
         }
         
         return numberOfElements
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "PhotoCell", for: indexPath)
-        
-        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "PhotoCell", for: indexPath) as! PhotosTableViewCell
+        if let photoUrlString = serachResult?.results[indexPath.row].urls.regular {
+            let photoURL = URL(string: photoUrlString)
+            var request = URLRequest(url: photoURL!)
+            request.httpMethod = "GET"
+            
+            let task = URLSession.shared.dataTask(with: request, completionHandler: {data, response, error in
+                guard let data = data else { return }
+                DispatchQueue.main.async {
+                    cell.photo.image = UIImage(data: data)
+                }
+            })
+            
+            task.resume()
+        }
+
         return cell
     }
-    
-    
 }
 
 extension ViewController: UITableViewDelegate {
