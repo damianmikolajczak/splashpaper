@@ -1,32 +1,37 @@
 //
-//  ViewController.swift
+//  SearchPhotosViewController.swift
 //  Splashpaper
 //
-//  Created by Damian Mikołajczak on 13/06/2021.
+//  Created by Damian Mikołajczak on 14/06/2021.
 //
 
 import UIKit
 
-class ViewController: UIViewController {
+class SearchPhotosViewController: UIViewController {
 
     @IBOutlet weak var photosTable: UITableView!
+    @IBOutlet weak var searchQurryField: UITextField!
     
-    let token = "Of course i hide the access key :)"
+    @IBAction func SearchButtonTapped() {
+        guard let query = searchQurryField.text else { return }
+        searchPhotos(query)
+    }
     
+    //let token = "Of course i hide the access key :)"
+    let token = "3LdBqjO80zbuaEXL0_Wnu3VMVT6XsNwVy_aVHu3Wb9U"
     var serachResult:Result?
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        searchPhotos()
+        searchPhotos("new")
         
         photosTable.delegate = self
         photosTable.dataSource = self
         photosTable.rowHeight = 270
     }
 
-    func searchPhotos() {
-        let url = URL(string: "https://api.unsplash.com/search/photos?&query=mountain")
+    func searchPhotos(_ query: String) {
+        let url = URL(string: "https://api.unsplash.com/search/photos?&query=\(query)")
         var request = URLRequest(url: url!)
 
         request.httpMethod = "GET"
@@ -45,12 +50,10 @@ class ViewController: UIViewController {
             }
         })
         task.resume()
-        
     }
-    
 }
 
-extension ViewController: UITableViewDataSource {
+extension SearchPhotosViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         guard let numberOfElements = serachResult?.results.count else {
             return 0
@@ -73,15 +76,14 @@ extension ViewController: UITableViewDataSource {
                     cell.authorName.text = self.serachResult!.results[indexPath.row].user.name
                 }
             })
-            
             task.resume()
         }
-
+        
         return cell
     }
 }
 
-extension ViewController: UITableViewDelegate {
+extension SearchPhotosViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let vc = storyboard?.instantiateViewController(identifier: "ImageDetailView") as! ImageDetailViewController
         
