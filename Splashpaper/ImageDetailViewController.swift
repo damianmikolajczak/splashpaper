@@ -20,6 +20,32 @@ class ImageDetailViewController: UIViewController {
     }
     
     @IBAction func donwloadPhoto() {
+        let photoURL = URL(string: "https://api.unsplash.com/photos/\(imageID!)?")
+        var getPhotoRequest = URLRequest(url: photoURL!)
+        getPhotoRequest.httpMethod = "GET"
+        getPhotoRequest.setValue("Client-ID \(token!)", forHTTPHeaderField: "Authorization")
+        
+        let getPhotoTask = URLSession.shared.dataTask(with: getPhotoRequest, completionHandler: { data, response, error in
+            guard let data = data else { print("Photo data corupted"); return }
+            do {
+                let photo = try JSONDecoder().decode(Photo.self, from: data)
+                let photoRawImageURL = URL(string: photo.urls.raw)
+                var getRawImageRequest = URLRequest(url: photoRawImageURL!)
+                getRawImageRequest.httpMethod = "GET"
+                print("Done")
+                let getRawImageTask = URLSession.shared.dataTask(with: getRawImageRequest, completionHandler: {data, response, error in
+                    guard let data = data else { print("Image data corupted"); return}
+                    print("Done")
+                    guard let image = UIImage(data: data) else { print("UIImage corupted"); return}
+                    print("Done")
+                    UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
+                    
+                })
+                getRawImageTask.resume()
+                
+            } catch { print(error) }
+        })
+        getPhotoTask.resume()
         
     }
     
