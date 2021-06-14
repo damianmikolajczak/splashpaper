@@ -18,6 +18,8 @@ struct Photo: Codable {
     var description: String?
     var urls: URLs
     var user: User
+    var width: Int
+    var height: Int
 }
 
 struct URLs: Codable {

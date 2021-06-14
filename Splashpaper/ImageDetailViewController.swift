@@ -15,6 +15,14 @@ class ImageDetailViewController: UIViewController {
     @IBOutlet weak var photo: UIImageView!
     @IBOutlet weak var authorName: UILabel!
     
+    @IBAction func likePhoto(){
+        
+    }
+    
+    @IBAction func donwloadPhoto() {
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         getPhoto()

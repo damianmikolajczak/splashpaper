@@ -13,8 +13,8 @@ class ViewController: UIViewController {
     
     let token = "Of course i hide the access key :)"
     
-    var serachResult:Result?
     
+    var serachResult:Result?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,7 +26,7 @@ class ViewController: UIViewController {
     }
 
     func searchPhotos() {
-        let url = URL(string: "https://api.unsplash.com/search/photos?&query=mountain")
+        let url = URL(string: "https://api.unsplash.com/search/photos?&query=new")
         var request = URLRequest(url: url!)
 
         request.httpMethod = "GET"
@@ -79,6 +79,7 @@ extension ViewController: UITableViewDataSource {
 
         return cell
     }
+    
 }
 
 extension ViewController: UITableViewDelegate {
@@ -92,6 +93,16 @@ extension ViewController: UITableViewDelegate {
             vc.modalPresentationStyle = .popover
             present(vc, animated: true, completion: nil)
         }
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        guard let photo = serachResult?.results[indexPath.row] else { return CGFloat(270)}
+        
+        let imageHeight = Float(photo.height)
+        let imageWidth = Float(photo.width)
+        let aspectRatio = imageWidth/imageHeight
+        
+        return CGFloat(414.0 / aspectRatio)
     }
 }
 
