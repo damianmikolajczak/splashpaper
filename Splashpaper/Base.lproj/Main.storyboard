@@ -219,14 +219,57 @@
         <!--Photos you liked-->
         <scene sceneID="JsS-jp-lPo">
             <objects>
-                <viewController id="KYe-J5-RhE" sceneMemberID="viewController">
+                <viewController id="KYe-J5-RhE" customClass="LikedPhotosViewController" customModule="Splashpaper" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vmJ-lO-joV">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="G24-Mi-nmy">
+                                <rect key="frame" x="0.0" y="60" width="414" height="753"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PhotoCell" rowHeight="270" id="C9b-m4-YNR" customClass="PhotosTableViewCell" customModule="Splashpaper" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="24.5" width="414" height="270"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="C9b-m4-YNR" id="PqB-iO-yrq">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="270"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yJi-Nw-92j">
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="270"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yXq-Nc-mah">
+                                                    <rect key="frame" x="20" y="238" width="374" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="yJi-Nw-92j" secondAttribute="trailing" id="2hv-hR-SDQ"/>
+                                                <constraint firstAttribute="bottom" secondItem="yXq-Nc-mah" secondAttribute="bottom" constant="11" id="avs-fs-bHt"/>
+                                                <constraint firstItem="yJi-Nw-92j" firstAttribute="leading" secondItem="PqB-iO-yrq" secondAttribute="leading" id="cC7-OT-0Qc"/>
+                                                <constraint firstItem="yXq-Nc-mah" firstAttribute="leading" secondItem="PqB-iO-yrq" secondAttribute="leading" constant="20" symbolic="YES" id="e2S-o4-n3H"/>
+                                                <constraint firstAttribute="bottom" secondItem="yJi-Nw-92j" secondAttribute="bottom" id="oBp-dw-rek"/>
+                                                <constraint firstItem="yJi-Nw-92j" firstAttribute="top" secondItem="PqB-iO-yrq" secondAttribute="top" id="yT3-lm-pWC"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="authorName" destination="yXq-Nc-mah" id="xo7-bQ-cig"/>
+                                            <outlet property="photo" destination="yJi-Nw-92j" id="ZH4-nQ-2Mh"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="LNX-g6-ZoQ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Photos you liked" image="heart" catalog="system" id="53c-QO-CRz"/>
+                    <connections>
+                        <outlet property="photosTable" destination="G24-Mi-nmy" id="IWj-Qh-scY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8fQ-Kg-3uR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -238,6 +281,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="iZS-aj-O8v" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="V5K-dr-Mrd">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>

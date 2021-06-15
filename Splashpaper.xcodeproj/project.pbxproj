@@ -20,6 +20,9 @@
 		2DF1344F2676B036002B8811 /* PhotosTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DF1344E2676B036002B8811 /* PhotosTableViewCell.swift */; };
 		2DF134512676C4F8002B8811 /* ImageDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DF134502676C4F8002B8811 /* ImageDetailViewController.swift */; };
 		2DF134532677D99E002B8811 /* SearchPhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DF134522677D99E002B8811 /* SearchPhotosViewController.swift */; };
+		2DF134572677FFDF002B8811 /* PhotoID+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DF134552677FFDF002B8811 /* PhotoID+CoreDataClass.swift */; };
+		2DF134582677FFDF002B8811 /* PhotoID+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DF134562677FFDF002B8811 /* PhotoID+CoreDataProperties.swift */; };
+		2DF1345A26780200002B8811 /* LikedPhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DF1345926780200002B8811 /* LikedPhotosViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +62,9 @@
 		2DF1344E2676B036002B8811 /* PhotosTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosTableViewCell.swift; sourceTree = "<group>"; };
 		2DF134502676C4F8002B8811 /* ImageDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDetailViewController.swift; sourceTree = "<group>"; };
 		2DF134522677D99E002B8811 /* SearchPhotosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPhotosViewController.swift; sourceTree = "<group>"; };
+		2DF134552677FFDF002B8811 /* PhotoID+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "PhotoID+CoreDataClass.swift"; path = "Splashpaper/Models/PhotoID+CoreDataClass.swift"; sourceTree = "<group>"; };
+		2DF134562677FFDF002B8811 /* PhotoID+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "PhotoID+CoreDataProperties.swift"; path = "Splashpaper/Models/PhotoID+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		2DF1345926780200002B8811 /* LikedPhotosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikedPhotosViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +95,8 @@
 		2DF1340D267686ED002B8811 = {
 			isa = PBXGroup;
 			children = (
+				2DF134552677FFDF002B8811 /* PhotoID+CoreDataClass.swift */,
+				2DF134562677FFDF002B8811 /* PhotoID+CoreDataProperties.swift */,
 				2DF13418267686ED002B8811 /* Splashpaper */,
 				2DF13432267686EE002B8811 /* SplashpaperTests */,
 				2DF1343D267686EE002B8811 /* SplashpaperUITests */,
@@ -109,12 +117,14 @@
 		2DF13418267686ED002B8811 /* Splashpaper */ = {
 			isa = PBXGroup;
 			children = (
+				2DF134542677FE80002B8811 /* Models */,
 				2DF13419267686ED002B8811 /* AppDelegate.swift */,
 				2DF1341B267686ED002B8811 /* SceneDelegate.swift */,
 				2DF1341D267686ED002B8811 /* ViewController.swift */,
 				2DF1344C26769EF8002B8811 /* Photo.swift */,
 				2DF1344E2676B036002B8811 /* PhotosTableViewCell.swift */,
 				2DF134522677D99E002B8811 /* SearchPhotosViewController.swift */,
+				2DF1345926780200002B8811 /* LikedPhotosViewController.swift */,
 				2DF1341F267686ED002B8811 /* Main.storyboard */,
 				2DF134502676C4F8002B8811 /* ImageDetailViewController.swift */,
 				2DF13425267686EE002B8811 /* Assets.xcassets */,
@@ -141,6 +151,13 @@
 				2DF13440267686EE002B8811 /* Info.plist */,
 			);
 			path = SplashpaperUITests;
+			sourceTree = "<group>";
+		};
+		2DF134542677FE80002B8811 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -279,7 +296,10 @@
 				2DF134512676C4F8002B8811 /* ImageDetailViewController.swift in Sources */,
 				2DF1341A267686ED002B8811 /* AppDelegate.swift in Sources */,
 				2DF1341C267686ED002B8811 /* SceneDelegate.swift in Sources */,
+				2DF1345A26780200002B8811 /* LikedPhotosViewController.swift in Sources */,
+				2DF134572677FFDF002B8811 /* PhotoID+CoreDataClass.swift in Sources */,
 				2DF13424267686ED002B8811 /* Splashpaper.xcdatamodeld in Sources */,
+				2DF134582677FFDF002B8811 /* PhotoID+CoreDataProperties.swift in Sources */,
 				2DF1344D26769EF8002B8811 /* Photo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

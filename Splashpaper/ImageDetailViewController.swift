@@ -9,14 +9,19 @@ import UIKit
 
 class ImageDetailViewController: UIViewController {
 
-    var token: String?
-    var imageID: String?
-    
     @IBOutlet weak var photo: UIImageView!
     @IBOutlet weak var authorName: UILabel!
     
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    var token: String?
+    var imageID: String?
+    
     @IBAction func likePhoto(){
-        
+        let newLikedPhoto = PhotoID(context: context)
+        newLikedPhoto.id = imageID!
+        do {
+            try context.save()
+        } catch { print(error)}
     }
     
     @IBAction func donwloadPhoto() {
