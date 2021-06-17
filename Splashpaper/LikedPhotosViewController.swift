@@ -11,8 +11,8 @@ class LikedPhotosViewController: UIViewController {
 
     @IBOutlet weak var photosTable: UITableView!
     
-    //let token = "Of course i hide the access key :)"
-    let token = "3LdBqjO80zbuaEXL0_Wnu3VMVT6XsNwVy_aVHu3Wb9U"
+    let token = "Of course i hide the access key :)"
+    
     
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     var photosIDs = Array<PhotoID>()
