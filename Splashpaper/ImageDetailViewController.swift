@@ -37,14 +37,19 @@ class ImageDetailViewController: UIViewController {
                 let photoRawImageURL = URL(string: photo.urls.raw)
                 var getRawImageRequest = URLRequest(url: photoRawImageURL!)
                 getRawImageRequest.httpMethod = "GET"
-                print("Done")
+                
                 let getRawImageTask = URLSession.shared.dataTask(with: getRawImageRequest, completionHandler: {data, response, error in
                     guard let data = data else { print("Image data corupted"); return}
-                    print("Done")
                     guard let image = UIImage(data: data) else { print("UIImage corupted"); return}
-                    print("Done")
                     UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
-                    
+                    DispatchQueue.main.async {
+                        
+                        //Showing a popup message when the download is complete.
+                        let action = UIAlertAction(title: "OK", style: .default, handler: nil)
+                        let alert = UIAlertController(title: "Saved", message: "The image was downloaded and saved to your photos gallery", preferredStyle: .alert)
+                        alert.addAction(action)
+                        self.present(alert, animated: true, completion: nil)
+                    }
                 })
                 getRawImageTask.resume()
                 
@@ -88,4 +93,6 @@ class ImageDetailViewController: UIViewController {
         })
         task.resume()
     }
+    
+    
 }

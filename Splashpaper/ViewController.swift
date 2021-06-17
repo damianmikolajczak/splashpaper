@@ -13,6 +13,7 @@ class ViewController: UIViewController {
     
     let token = "Of course i hide the access key :)"
     
+    
     var serachResult:Result?
     
     override func viewDidLoad() {
