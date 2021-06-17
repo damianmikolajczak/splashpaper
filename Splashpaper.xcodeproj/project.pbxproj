@@ -62,8 +62,8 @@
 		2DF1344E2676B036002B8811 /* PhotosTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosTableViewCell.swift; sourceTree = "<group>"; };
 		2DF134502676C4F8002B8811 /* ImageDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDetailViewController.swift; sourceTree = "<group>"; };
 		2DF134522677D99E002B8811 /* SearchPhotosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPhotosViewController.swift; sourceTree = "<group>"; };
-		2DF134552677FFDF002B8811 /* PhotoID+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "PhotoID+CoreDataClass.swift"; path = "Splashpaper/Models/PhotoID+CoreDataClass.swift"; sourceTree = "<group>"; };
-		2DF134562677FFDF002B8811 /* PhotoID+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "PhotoID+CoreDataProperties.swift"; path = "Splashpaper/Models/PhotoID+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		2DF134552677FFDF002B8811 /* PhotoID+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PhotoID+CoreDataClass.swift"; sourceTree = "<group>"; };
+		2DF134562677FFDF002B8811 /* PhotoID+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PhotoID+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		2DF1345926780200002B8811 /* LikedPhotosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikedPhotosViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -95,8 +95,6 @@
 		2DF1340D267686ED002B8811 = {
 			isa = PBXGroup;
 			children = (
-				2DF134552677FFDF002B8811 /* PhotoID+CoreDataClass.swift */,
-				2DF134562677FFDF002B8811 /* PhotoID+CoreDataProperties.swift */,
 				2DF13418267686ED002B8811 /* Splashpaper */,
 				2DF13432267686EE002B8811 /* SplashpaperTests */,
 				2DF1343D267686EE002B8811 /* SplashpaperUITests */,
@@ -156,6 +154,8 @@
 		2DF134542677FE80002B8811 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				2DF134552677FFDF002B8811 /* PhotoID+CoreDataClass.swift */,
+				2DF134562677FFDF002B8811 /* PhotoID+CoreDataProperties.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";

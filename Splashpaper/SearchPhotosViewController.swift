@@ -18,8 +18,8 @@ class SearchPhotosViewController: UIViewController {
         view.endEditing(true)
     }
     
-    let token = "Of course i hide the access key :)"
-    
+    //let token = "Of course i hide the access key :)"
+    let token = "3LdBqjO80zbuaEXL0_Wnu3VMVT6XsNwVy_aVHu3Wb9U"
     
     var serachResult:Result?
     
