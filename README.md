@@ -5,7 +5,7 @@ This app uses the Unsplash API to deliver awesome wallpapers to the end user. Th
 ## Technologies
 Splashpaper was written for iOS in Swift using the UIKit framework. The UI was mostly made in storyboard but some functionality was added in the viewcontrollers code as well. The information of liked photos is stored localy on the device using a simple CoraData model which contains a string with the photos ID. If you want to add some more functionality to this project feel free to clone my repo, than read the Unsplash API documentation (@ https://unsplash.com/documentation) and implement your changes (:
 
-## Ilustrations
+## Screenshots
 The main screen of the app shows the newest photos on Unsplash with a small annotation who's the author. The display list was done using a table view.
 
 <img src="Splashpaper/Images/mainScreenView.PNG" width="250"></br></br></br>
